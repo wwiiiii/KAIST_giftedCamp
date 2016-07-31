@@ -10,11 +10,12 @@ void gotoxy(int x, int y)
 	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), Pos);
 }
 
-void loadMapData()
+void loadMapData(int mapNum)
 {
-	FILE * f = fopen("map1.txt", "r");
+	char mapname[20]; sprintf(mapname, "map%d.txt", mapNum);
+	FILE * f = fopen(mapname, "r");
 	int a, b; fscanf(f, "%d %d", &a, &b); 
-	row = a, col = b; mode = posx = posy = 1; cnt = 0;
+	row = a, col = b; posx = posy = 1; cnt = 0;
 	map = malloc(sizeof(int*) * a);
 	for (int i = 0; i < a; i++)
 	{
@@ -98,17 +99,21 @@ void setModeNoShow() { mode = 0; }
 
 void winGame()
 {
-	printMap();
-	gotoxy(1, 1); 
-	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 16*0+07);
-	printf("Total Move Count : %d\nClear!                 \n", cnt);
-	exit(1);
+	if (mode == 1)
+	{
+		printMap();
+		gotoxy(1, 1);
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 16 * 0 + 07);
+		printf("Total Move Count : %d\nClear!                 \n", cnt);
+		Sleep(1000);
+	}
+	//exit(1);
 }
 
 
 void initPrintMap()
 {
-	int a = row; int b = col;
+	int a = row; int b = col; SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 16 * 0 + 07); system("cls");
 	for (int i = 0; i < a; i++)
 	{
 		for (int j = 0; j < b; j++)
@@ -135,4 +140,8 @@ void initPrintMap()
 		}
 		puts("");
 	}
+}
+
+int getCount() {
+	return cnt;
 }

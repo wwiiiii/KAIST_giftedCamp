@@ -12,14 +12,14 @@
 #define BLACK 8*16+8
 #define WHITE 7*16+7
 #define GREEN 2*16+7
-void loadMapData();
+void loadMapData(int);
 void printMap();
 void deleteMap();
 void winGame();
 
 static int** map;
 extern int nearMap[3][3];
-static int row, col, mode;//mode 0 : show only result, mode 1 : show GUI
+static int row, col, mode = 1;//mode 0 : show only result, mode 1 : show GUI
 static int posx, posy, cnt, lastDir;
 static int marginx = 10, marginy = 5;
 static int dx[] = {-1,1,0,0};
@@ -35,10 +35,11 @@ static int delay = 100;
 int move(int);//call matching function
 
 //update near array, return pointer of near array
-void findNear();
+void findNear(int [3][3]);
 void setModeShow(int newDelay);
 void setModeNoShow();
 void gotoxy(int,int);
 void initPrintMap();
+int getCount();
 
 #endif

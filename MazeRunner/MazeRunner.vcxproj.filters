@@ -21,14 +21,29 @@
     <ClCompile Include="main.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="grader.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="myMazeAlgo.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="map1.txt">
       <Filter>리소스 파일</Filter>
     </Text>
+    <Text Include="map2.txt">
+      <Filter>리소스 파일</Filter>
+    </Text>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="mazeapi.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="grader.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="myMazeAlgo.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>

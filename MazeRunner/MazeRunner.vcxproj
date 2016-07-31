@@ -142,14 +142,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="grader.c" />
     <ClCompile Include="main.c" />
     <ClCompile Include="mazeapi.c" />
+    <ClCompile Include="myMazeAlgo.c" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="map1.txt" />
+    <Text Include="map2.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="grader.h" />
     <ClInclude Include="mazeapi.h" />
+    <ClInclude Include="myMazeAlgo.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
