@@ -16,10 +16,10 @@ void loadMapData(int mapNum)
 	FILE * f = fopen(mapname, "r");
 	int a, b; fscanf(f, "%d %d", &a, &b); 
 	row = a, col = b; posx = posy = 1; cnt = 0;
-	map = malloc(sizeof(int*) * a);
+	map = (int**)malloc(sizeof(int*) * a);
 	for (int i = 0; i < a; i++)
 	{
-		map[i] = malloc(sizeof(int)*b);
+		map[i] = (int*)malloc(sizeof(int)*b);
 		for (int j = 0; j < b; j++)
 		{
 			fscanf(f, "%d", &map[i][j]);
