@@ -20,7 +20,7 @@ void winGame();
 static int** map;
 extern int nearMap[3][3];
 static int row, col, mode = 1;//mode 0 : show only result, mode 1 : show GUI
-static int posx, posy, cnt, lastDir;
+static int posx, posy, cnt, lastDir, clear;
 static int marginx = 10, marginy = 5;
 static int dx[] = {-1,1,0,0};
 static int dy[] = {0,0,-1,1};
@@ -41,5 +41,5 @@ void setModeNoShow();
 void gotoxy(int,int);
 void initPrintMap();
 int getCount();
-
+int getSuccess();
 #endif

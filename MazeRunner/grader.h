@@ -2,7 +2,7 @@
 #ifndef __GRADER_H__
 #define __GRADER_H__
 
-#define MAP_NUM 2
+#define MAP_NUM 5
 #include "myMazeAlgo.h"
 #include "mazeapi.h"
 
